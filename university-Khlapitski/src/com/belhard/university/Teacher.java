@@ -23,19 +23,21 @@ public class Teacher {
 		this.academicDegre = academicDegre;
 	}
 
-	@Override
-	public String toString() {
-		return "Teacher [subject=" + subject + ", academicDegre=" + academicDegre + ", getSubject()=" + getSubject()
-				+ ", getAcademicDegre()=" + getAcademicDegre() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
-	}
-
 	public double getAllowancesForAcademicDerges() {
 		return allowancesForAcademicDerges;
 	}
 
 	public void setAllowancesForAcademicDerges(double allowancesForAcademicDerges) {
 		this.allowancesForAcademicDerges = allowancesForAcademicDerges;
+	}
+
+	@Override
+	public String toString() {
+		return "Teacher [subject=" + subject + ", academicDegre=" + academicDegre + ", allowancesForAcademicDerges="
+				+ allowancesForAcademicDerges + ", getSubject()=" + getSubject() + ", getAcademicDegre()="
+				+ getAcademicDegre() + ", getAllowancesForAcademicDerges()=" + getAllowancesForAcademicDerges()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 
 }
