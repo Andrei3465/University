@@ -5,26 +5,24 @@ import com.belhard.university.Person.Student;
 public class App {
 
 	public static void main(String[] args) {
-		  
-class Student extends Person{
-		Student st1 = new Student("Andrei", "Bulkin");
-		Student st2 = new Student("Mike", "Tyson");
-		Student st3 = new Student("Arnold", "Shvaceniger");
-		Student st4 = new Student("Jason", "Statham");
-		Student st5 = new Student("Barak", "Obama");
-		Student st6 = new Student("Bob", "Sinclar");
-		Student st7 = new Student("Tereza", "May");
-		Student st8 = new Student("Brithni", "Spears");
 
-		Teacher th1 = new Teacher("Bob", "Marley");
-		Teacher th2 = new Teacher("John", "Travolta");
-		Teacher th3 = new Teacher("Bryce", "LI");
+		class Person extends Group {
+			Student st1 = new Student("Andrei", "Bulkin");
+			Student st2 = new Student("Mike", "Tyson");
+			Student st3 = new Student("Arnold", "Shvaceniger");
+			Student st4 = new Student("Jason", "Statham");
+			Student st5 = new Student("Barak", "Obama");
+			Student st6 = new Student("Bob", "Sinclar");
+			Student st7 = new Student("Tereza", "May");
+			Student st8 = new Student("Brithni", "Spears");
 
+			Teacher th1 = new Teacher("Bob", "Marley");
+			Teacher th2 = new Teacher("John", "Travolta");
+			Teacher th3 = new Teacher("Bryce", "LI");
+		}
 		Group group = new Group();
-		
- class Person extends Group{
-		group.setNumber(293){
-		group.setTeacher(th1);
+		group.setNumber(37);
+		group.addTeacher(th1);
 		group.addStudent(st1);
 		group.addStudent(st2);
 		group.addStudent(st3);
@@ -39,16 +37,16 @@ class Student extends Person{
 		group.removeStudent(st4);
 		group.removeStudent(st6);
 		group.removeStudent(st2);
+		group.removeTeacher(th1);
 
-		System.out.println("REMOVED STUDENT - 4; 6; 2:\n" + group.getList());
+		System.out.println("REMOVED STUDENT - 4; 6; 2:\n" + "REMOVED TEACHER - 1:\n" + group.getList());
 
 		group.addStudent(new Student("Peter", "Parker"));
 		group.addStudent(new Student("Tony", "Stark"));
 		group.addStudent(new Student("Melinda", "May"));
+		group.addTeacher(new Teacher("Ozzy", "Osborn"));
 
 		System.out.println("ADDED NEW STUDENT:\n" + group.getList());
-	}
- }
 
 	}
 
@@ -57,4 +55,5 @@ class Student extends Person{
 		return "App [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
+
 }

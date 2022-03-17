@@ -1,7 +1,7 @@
 package com.belhard.university;
 
 public class Cleaner {
-	
+
 	private int cleaningCabinet;
 
 	public int getCleaningCabinet() {
@@ -18,6 +18,4 @@ public class Cleaner {
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
-	
-
 }

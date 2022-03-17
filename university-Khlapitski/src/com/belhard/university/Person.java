@@ -28,6 +28,30 @@ public class Person {
 		}
 	}
 
+	class Cleaner extends Person {
+		public Cleaner(String firstName, String lastName) {
+			id = counter++;
+			this.firstName = firstName;
+			this.lastName = lastName;
+		}
+	}
+
+	class Manager extends Person {
+		public Manager(String firstName, String lastName) {
+			id = counter++;
+			this.firstName = firstName;
+			this.lastName = lastName;
+		}
+	}
+
+	class Deputy extends Person {
+		public Deputy(String firstName, String lastName) {
+			id = counter++;
+			this.firstName = firstName;
+			this.lastName = lastName;
+		}
+	}
+
 	public static long getCounter() {
 		return counter;
 	}
@@ -95,10 +119,7 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth="
-				+ dateOfBirth + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email=" + email
-				+ ", getId()=" + getId() + ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName()
-				+ ", getDateOfBirth()=" + getDateOfBirth() + ", getAddress()=" + getAddress() + ", getPhoneNumber()="
-				+ getPhoneNumber() + ", getEmail()=" + getEmail() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ dateOfBirth + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
 	}
+
 }

@@ -9,6 +9,8 @@ public class Employee {
 	private String structuralDivivsion;
 	private double vacationPay;
 	private double prize;
+	private double salaryFix;
+	private double degreeAllowance;
 	public int getExperience() {
 		return experience;
 	}
@@ -58,15 +60,24 @@ public class Employee {
 	public void setPrize(double prize) {
 		this.prize = prize;
 	}
+	
+		public double getSalaryFix() {
+		return salaryFix;
+	}
+	public void setSalaryFix(double salaryFix) {
+		this.salaryFix = salaryFix;
+	}
+	public double getDegreeAllowance() {
+		return degreeAllowance;
+	}
+	public void setDegreeAllowance(double degreeAllowance) {
+		this.degreeAllowance = degreeAllowance;
+	}
 	@Override
 	public String toString() {
 		return "Employee [experience=" + experience + ", hoursWorked=" + hoursWorked + ", salary=" + salary
 				+ ", vacation=" + vacation + ", structuralDivivsion=" + structuralDivivsion + ", vacationPay="
-				+ vacationPay + ", prize=" + prize + ", yearsOfExperience=" + yearsOfExperience + ", getExperience()="
-				+ getExperience() + ", getHoursWorked()=" + getHoursWorked() + ", getSalary()=" + getSalary()
-				+ ", getVacation()=" + getVacation() + ", getStructuralDivivsion()=" + getStructuralDivivsion()
-				+ ", getYearsOfExperience()=" + getYearsOfExperience() + ", getVacationPay()=" + getVacationPay()
-				+ ", getPrize()=" + getPrize() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ vacationPay + ", prize=" + prize + ", salaryFix=" + salaryFix + ", degreeAllowance=" + degreeAllowance
+				+ ", yearsOfExperience=" + yearsOfExperience + "]";
 	}
 }
