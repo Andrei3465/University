@@ -1,11 +1,13 @@
 package com.belhard.university;
 
+import com.belhard.university.Person.Student;
+
 public class App {
 
 	public static void main(String[] args) {
 		  
 class Student extends Person{
-		Person st1 = new Student("Andrei", "Bulkin");
+		Student st1 = new Student("Andrei", "Bulkin");
 		Student st2 = new Student("Mike", "Tyson");
 		Student st3 = new Student("Arnold", "Shvaceniger");
 		Student st4 = new Student("Jason", "Statham");
@@ -19,8 +21,9 @@ class Student extends Person{
 		Teacher th3 = new Teacher("Bryce", "LI");
 
 		Group group = new Group();
- class Group extends Person{
-		group.setNumber(293);
+		
+ class Person extends Group{
+		group.setNumber(293){
 		group.setTeacher(th1);
 		group.addStudent(st1);
 		group.addStudent(st2);
@@ -45,8 +48,10 @@ class Student extends Person{
 
 		System.out.println("ADDED NEW STUDENT:\n" + group.getList());
 	}
-}
+ }
+
 	}
+
 	@Override
 	public String toString() {
 		return "App [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
