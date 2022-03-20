@@ -1,6 +1,6 @@
 package com.belhard.university;
 
-public class Employee {
+public class Employee extends Person{
 
 	private int experience;
 	private int hoursWorked;

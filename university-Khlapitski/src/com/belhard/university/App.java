@@ -1,25 +1,22 @@
 package com.belhard.university;
 
-import com.belhard.university.Person.Student;
-
-public class App {
+public class App extends Group {
 
 	public static void main(String[] args) {
 
-		class Person extends Group {
-			Student st1 = new Student("Andrei", "Bulkin");
-			Student st2 = new Student("Mike", "Tyson");
-			Student st3 = new Student("Arnold", "Shvaceniger");
-			Student st4 = new Student("Jason", "Statham");
-			Student st5 = new Student("Barak", "Obama");
-			Student st6 = new Student("Bob", "Sinclar");
-			Student st7 = new Student("Tereza", "May");
-			Student st8 = new Student("Brithni", "Spears");
+		Student st1 = new Student("Andrei", "Bulkin");
+		Student st2 = new Student("Mike", "Tyson");
+		Student st3 = new Student("Arnold", "Shvaceniger");
+		Student st4 = new Student("Jason", "Statham");
+		Student st5 = new Student("Barak", "Obama");
+		Student st6 = new Student("Bob", "Sinclar");
+		Student st7 = new Student("Tereza", "May");
+		Student st8 = new Student("Brithni", "Spears");
 
-			Teacher th1 = new Teacher("Bob", "Marley");
-			Teacher th2 = new Teacher("John", "Travolta");
-			Teacher th3 = new Teacher("Bryce", "LI");
-		}
+		Teacher th1 = new Teacher("Bob", "Marley");
+		Teacher th2 = new Teacher("John", "Travolta");
+		Teacher th3 = new Teacher("Bryce", "LI");
+
 		Group group = new Group();
 		group.setNumber(37);
 		group.addTeacher(th1);

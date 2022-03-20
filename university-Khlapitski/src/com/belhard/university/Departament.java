@@ -1,8 +1,8 @@
 package com.belhard.university;
 
-public class Departament {
+public class Departament extends Employee {
 
-	class Group extends Person {
+	
 		Teacher th1 = new Teacher("Bob", "Marley");
 		Teacher th2 = new Teacher("John", "Travolta");
 		Teacher th3 = new Teacher("Bryce", "LI");
@@ -17,5 +17,8 @@ public class Departament {
 		Manager mg1 = new Manager ("Galina", "Sidorova");
 		
 		Deputy dp1 = new Deputy("Oleg", "Sokolov");
+		
+		
+		
 	}
-}
+
