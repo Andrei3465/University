@@ -1,6 +1,6 @@
 package com.belhard.university;
 
-public class Employee extends Person{
+public abstract class Employee extends Person{
 
 	private int experience;
 	private int hoursWorked;
@@ -11,6 +11,7 @@ public class Employee extends Person{
 	private double prize;
 	private double salaryFix;
 	private double degreeAllowance;
+	
 	public int getExperience() {
 		return experience;
 	}

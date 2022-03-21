@@ -2,7 +2,7 @@ package com.belhard.university;
 
 import java.util.Arrays;
 
-public class Group extends Person {
+public abstract class Group extends Person {
 	private int number;
 	private final Teacher[] teachers = new Teacher[8];
 	private final Student[] students = new Student[8];
@@ -25,13 +25,10 @@ public class Group extends Person {
 		return false;
 	}
 
-	public void Teacher(String firstName, String lastName) {
-	}
-
 	public boolean removeTeacher(Teacher teacher) {
 		boolean removed = false;
 		for (int i = 0; i < numberOfTeachers; i++) {
-			Person elm = teachers[i];
+			Teacher elm = teachers[i];
 			if (elm.getId() == teacher.getId()) {
 				teachers[i] = null;
 				removed = true;
@@ -59,13 +56,10 @@ public class Group extends Person {
 		return false;
 	}
 
-	public void Student(String firstName, String lastName) {
-	}
-
 	public boolean removeStudent(Student student) {
 		boolean removed = false;
 		for (int i = 0; i < numberOfStudents; i++) {
-			Person elm = students[i];
+			Student elm = students[i];
 			if (elm.getId() == student.getId()) {
 				students[i] = null;
 				removed = true;

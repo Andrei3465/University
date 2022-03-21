@@ -1,10 +1,10 @@
 package com.belhard.university;
 
-
-public class Student extends Person{
+public class Student extends Person {
+	Student[] student;
 	private int yearOfStudy;
 	private boolean isBudget;
-	private boolean academicPerformance;
+	private int academicPerformance;
 
 	public int getYearOfStudy() {
 		return yearOfStudy;
@@ -22,11 +22,11 @@ public class Student extends Person{
 		this.isBudget = isBudget;
 	}
 
-	public boolean getAcademicPerformance() {
+	public int getAcademicPerformance() {
 		return academicPerformance;
 	}
 
-	public void setAcademicPerformance(boolean academicPerformance) {
+	public void setAcademicPerformance(int academicPerformance) {
 		this.academicPerformance = academicPerformance;
 	}
 
@@ -36,6 +36,11 @@ public class Student extends Person{
 				+ academicPerformance + ", getYearOfStudy()=" + getYearOfStudy() + ", isBudget()=" + getIsBudget()
 				+ ", isAcademicPerformance()=" + getAcademicPerformance() + ", getClass()=" + getClass()
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public String introduceYourself() {
+		return "My name is " + student + ", I'am a student of the " + yearOfStudy + ".";
 	}
 
 }

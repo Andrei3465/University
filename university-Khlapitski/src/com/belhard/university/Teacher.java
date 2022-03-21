@@ -1,7 +1,8 @@
 package com.belhard.university;
 
 
-public class Teacher extends Person {
+public class Teacher extends Employee {
+	Teacher [] teachers;
 
 	private String subject;
 	private String academicDegre;
@@ -38,6 +39,11 @@ public class Teacher extends Person {
 				+ getAcademicDegre() + ", getAllowancesForAcademicDerges()=" + getAllowancesForAcademicDerges()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
+	}
+
+	@Override
+	public String introduceYourself() {
+		return "My name is " + teachers + ", I'am a " + subject + "teacher.";
 	}
 
 }

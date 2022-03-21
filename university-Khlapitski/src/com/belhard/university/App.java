@@ -1,6 +1,6 @@
 package com.belhard.university;
 
-public class App extends Group {
+public abstract class App extends Group {
 
 	public static void main(String[] args) {
 
@@ -12,7 +12,7 @@ public class App extends Group {
 		Student st6 = new Student("Bob", "Sinclar");
 		Student st7 = new Student("Tereza", "May");
 		Student st8 = new Student("Brithni", "Spears");
-
+		
 		Teacher th1 = new Teacher("Bob", "Marley");
 		Teacher th2 = new Teacher("John", "Travolta");
 		Teacher th3 = new Teacher("Bryce", "LI");

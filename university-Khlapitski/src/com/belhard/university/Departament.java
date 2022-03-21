@@ -1,6 +1,6 @@
 package com.belhard.university;
 
-public class Departament extends Employee {
+public abstract class Departament extends Employee {
 
 	
 		Teacher th1 = new Teacher("Bob", "Marley");

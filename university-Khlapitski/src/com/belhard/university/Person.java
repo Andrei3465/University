@@ -2,7 +2,10 @@ package com.belhard.university;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person {
+
+	public abstract String introduceYourself();
+
 	private static long counter = 1;
 	private long id;
 	public String firstName;
@@ -19,8 +22,7 @@ public class Person {
 			this.lastName = lastName;
 		}
 	}
-
-	class Teacher extends Person {
+	class Teacher extends Employee {
 		public Teacher(String firstName, String lastName) {
 			id = counter++;
 			this.firstName = firstName;
@@ -28,7 +30,7 @@ public class Person {
 		}
 	}
 
-	class Cleaner extends Person {
+	class Cleaner extends Employee {
 		public Cleaner(String firstName, String lastName) {
 			id = counter++;
 			this.firstName = firstName;
@@ -36,7 +38,7 @@ public class Person {
 		}
 	}
 
-	class Manager extends Person {
+	class Manager extends Employee  {
 		public Manager(String firstName, String lastName) {
 			id = counter++;
 			this.firstName = firstName;
@@ -44,7 +46,7 @@ public class Person {
 		}
 	}
 
-	class Deputy extends Person {
+	class Deputy extends Employee {
 		public Deputy(String firstName, String lastName) {
 			id = counter++;
 			this.firstName = firstName;
