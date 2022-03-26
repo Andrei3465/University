@@ -4,18 +4,10 @@ import java.util.Arrays;
 
 public class Group {
 	private int number;
-	private final Teacher[] teachers = new Teacher[8];
+	private final Teacher[] teachers = new Teacher[1];
 	private final Student[] students = new Student[8];
 	private int numberOfStudents;
 	private int numberOfTeachers;
-
-	public int getNumber() {
-		return number;
-	}
-
-	public void setNumber(int number) {
-		this.number = number;
-	}
 
 	public boolean addTeacher(Teacher teacher) {
 		if (numberOfTeachers < teachers.length) {
@@ -77,11 +69,19 @@ public class Group {
 		return removed;
 	}
 
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
 	public String getList() {
-		String list = "#####Group " + number + "#####\n";
+		String list = "************Group " + number + "*************\n";
 		list += "Teacher: ";
 		for (int i = 0; i < teachers.length; i++) {
-			Person teacher = teachers[i];
+			Teacher teacher = teachers[i];
 			if (teacher == null) {
 				break;
 			}
@@ -92,12 +92,13 @@ public class Group {
 		}
 		list += "Students:\n";
 		for (int i = 0; i < students.length; i++) {
-			Person student = students[i];
+			Student student = students[i];
 			if (student == null) {
 				break;
 			}
 			list += (i + 1) + ". {id:" + student.getId() + "} " + student.getFirstName() + " " + student.getLastName()
-					+ " " + student.getEmail() + "\n";
+					+ " " + student.getEmail() + " " + student.getIsBudget() + " " + student.getAcademicPerformance() 
+					+ " " + student.getAddress() + " " + student.getDateOfBirth() + "\n";
 		}
 		return list;
 	}
@@ -106,6 +107,7 @@ public class Group {
 	public String toString() {
 		return "Group [number=" + number + ", teachers=" + Arrays.toString(teachers) + ", students="
 				+ Arrays.toString(students) + ", numberOfStudents=" + numberOfStudents + ", numberOfTeachers="
-				+ numberOfTeachers + "]";
+				+ numberOfTeachers + ", getNumber()=" + getNumber() + ", getList()=" + getList() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 }

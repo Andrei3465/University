@@ -1,5 +1,7 @@
 package com.belhard.university;
 
+import java.util.Arrays;
+
 public class Teacher extends Employee {
 	Teacher[] teachers;
 	private static long counter = 1;
@@ -50,10 +52,8 @@ public class Teacher extends Employee {
 
 	@Override
 	public String toString() {
-		return "Teacher [subject=" + subject + ", academicDegre=" + academicDegre + ", allowancesForAcademicDerges="
-				+ allowancesForAcademicDerges + ", getSubject()=" + getSubject() + ", getAcademicDegre()="
-				+ getAcademicDegre() + ", getAllowancesForAcademicDerges()=" + getAllowancesForAcademicDerges()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+		return "Teacher [teachers=" + Arrays.toString(teachers) + ", id=" + id + ", subject=" + subject
+				+ ", academicDegre=" + academicDegre + ", allowancesForAcademicDerges=" + allowancesForAcademicDerges
 				+ "]";
 	}
 
@@ -61,5 +61,4 @@ public class Teacher extends Employee {
 	public String introduceYourself() {
 		return "My name is " + teachers + ", I'am a " + subject + "teacher.";
 	}
-
 }

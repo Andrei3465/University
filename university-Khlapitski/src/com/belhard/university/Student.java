@@ -1,5 +1,7 @@
 package com.belhard.university;
 
+import java.util.Arrays;
+
 public class Student extends Person {
 	Student[] student;
 	private static long counter = 1;
@@ -49,15 +51,20 @@ public class Student extends Person {
 	}
 
 	@Override
-	public String toString() {
-		return "Student [yearOfStudy=" + yearOfStudy + ", isBudget=" + isBudget + ", academicPerformance="
-				+ academicPerformance + ", getYearOfStudy()=" + getYearOfStudy() + ", isBudget()=" + getIsBudget()
-				+ ", isAcademicPerformance()=" + getAcademicPerformance() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	public String introduceYourself() {
+		return "My name is " + student + ", I'am a student of the " + yearOfStudy + ".";
 	}
 
 	@Override
-	public String introduceYourself() {
-		return "My name is " + student + ", I'am a student of the " + yearOfStudy + ".";
+	public String toString() {
+		return "Student [student=" + Arrays.toString(student) + ", id=" + id + ", yearOfStudy=" + yearOfStudy
+				+ ", isBudget=" + isBudget + ", academicPerformance=" + academicPerformance + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", getId()=" + getId() + ", getYearOfStudy()=" + getYearOfStudy()
+				+ ", getIsBudget()=" + getIsBudget() + ", getAcademicPerformance()=" + getAcademicPerformance()
+				+ ", introduceYourself()=" + introduceYourself() + ", getFirstName()=" + getFirstName()
+				+ ", getLastName()=" + getLastName() + ", getDateOfBirth()=" + getDateOfBirth() + ", getAddress()="
+				+ getAddress() + ", getPhoneNumber()=" + getPhoneNumber() + ", getEmail()=" + getEmail()
+				+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ "]";
 	}
 }

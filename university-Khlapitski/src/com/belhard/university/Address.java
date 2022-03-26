@@ -62,9 +62,6 @@ public class Address {
 	@Override
 	public String toString() {
 		return "Address [country=" + country + ", city=" + city + ", street=" + street + ", house=" + house + ", flat="
-				+ flat + ", getCountry()=" + getCountry() + ", getCity()=" + getCity() + ", getStreet()=" + getStreet()
-				+ ", getHouse()=" + getHouse() + ", getFlat()=" + getFlat() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ flat + "]";
 	}
-
 }
