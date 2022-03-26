@@ -97,8 +97,8 @@ public class Group {
 				break;
 			}
 			list += (i + 1) + ". {id:" + student.getId() + "} " + student.getFirstName() + " " + student.getLastName()
-					+ " " + student.getEmail() + " " + student.getIsBudget() + " " + student.getAcademicPerformance() 
-					+ " " + student.getAddress() + " " + student.getDateOfBirth() + "\n";
+					+ " , Email: " + student.getEmail() + " , Is Budget - " + student.getIsBudget() + " " + student.getAcademicPerformance() 
+					+ " " + student.getAddress() + " , Date of birth: " + student.getDateOfBirth() + "\n";
 		}
 		return list;
 	}
