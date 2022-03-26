@@ -14,8 +14,8 @@ public class Address {
 		this.house = house;
 	}
 
-	public Address (String country, String city, String street, String house, int flat) {
-		this(country, city,street, house);
+	public Address(String country, String city, String street, String house, int flat) {
+		this(country, city, street, house);
 		this.flat = flat;
 	}
 

@@ -1,13 +1,29 @@
 package com.belhard.university;
 
-
 public class Teacher extends Employee {
-	Teacher [] teachers;
-
+	Teacher[] teachers;
+	private static long counter = 1;
+	private long id;
 	private String subject;
 	private String academicDegre;
 	private double allowancesForAcademicDerges;
-	
+
+	public Teacher(String firstName, String lastName) {
+		id = counter++;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	@Override
+	public long getId() {
+		return id;
+	}
+
+	@Override
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getSubject() {
 		return subject;
 	}

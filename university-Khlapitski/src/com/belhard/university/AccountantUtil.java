@@ -21,10 +21,12 @@ public class AccountantUtil {
 		double salary = salaryFix + prize + degreeAllowance;
 		return salary;
 	}
+
 	public static double salaryManager(double salaryFix, double prize, double degreeAllowance) {
 		double salary = salaryFix + prize + degreeAllowance;
 		return salary;
 	}
+
 	public static double salaryDeputy(double salaryFix, double prize, double degreeAllowance) {
 		double salary = salaryFix + prize + degreeAllowance;
 		return salary;

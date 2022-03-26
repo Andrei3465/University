@@ -15,45 +15,6 @@ public abstract class Person {
 	private int phoneNumber;
 	private String email;
 
-	class Student extends Person {
-		public Student(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
-	class Teacher extends Employee {
-		public Teacher(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
-
-	class Cleaner extends Employee {
-		public Cleaner(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
-
-	class Manager extends Employee  {
-		public Manager(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
-
-	class Deputy extends Employee {
-		public Deputy(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
-
 	public static long getCounter() {
 		return counter;
 	}

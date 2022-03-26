@@ -2,9 +2,27 @@ package com.belhard.university;
 
 public class Student extends Person {
 	Student[] student;
+	private static long counter = 1;
+	private long id;
 	private int yearOfStudy;
 	private boolean isBudget;
 	private int academicPerformance;
+
+	public Student(String firstName, String lastName) {
+		id = counter++;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	@Override
+	public long getId() {
+		return id;
+	}
+
+	@Override
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public int getYearOfStudy() {
 		return yearOfStudy;
@@ -42,5 +60,4 @@ public class Student extends Person {
 	public String introduceYourself() {
 		return "My name is " + student + ", I'am a student of the " + yearOfStudy + ".";
 	}
-
 }

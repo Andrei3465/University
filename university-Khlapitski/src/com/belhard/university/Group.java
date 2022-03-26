@@ -2,7 +2,7 @@ package com.belhard.university;
 
 import java.util.Arrays;
 
-public abstract class Group extends Person {
+public class Group {
 	private int number;
 	private final Teacher[] teachers = new Teacher[8];
 	private final Student[] students = new Student[8];
@@ -40,7 +40,6 @@ public abstract class Group extends Person {
 					teachers[i] = null;
 				}
 			}
-
 		}
 		if (removed) {
 			numberOfTeachers--;
@@ -71,7 +70,6 @@ public abstract class Group extends Person {
 					students[i] = null;
 				}
 			}
-
 		}
 		if (removed) {
 			numberOfStudents--;
@@ -110,5 +108,4 @@ public abstract class Group extends Person {
 				+ Arrays.toString(students) + ", numberOfStudents=" + numberOfStudents + ", numberOfTeachers="
 				+ numberOfTeachers + "]";
 	}
-
 }
