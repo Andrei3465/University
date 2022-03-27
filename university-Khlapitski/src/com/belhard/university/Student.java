@@ -1,6 +1,7 @@
 package com.belhard.university;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Student extends Person {
 	Student[] student;
@@ -53,6 +54,28 @@ public class Student extends Person {
 	@Override
 	public String introduceYourself() {
 		return "My name is " + student + ", I'am a student of the " + yearOfStudy + ".";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(student);
+		result = prime * result + Objects.hash(academicPerformance, id, isBudget, yearOfStudy);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return academicPerformance == other.academicPerformance && id == other.id && isBudget == other.isBudget
+				&& Arrays.equals(student, other.student) && yearOfStudy == other.yearOfStudy;
 	}
 
 	@Override

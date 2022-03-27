@@ -2,7 +2,7 @@ package com.belhard.university;
 
 import java.util.Arrays;
 
-public class Departament extends Employee {
+public class Departament implements Identifiable {
 
 	private int number;
 	private final Teacher[] teachers = new Teacher[8];

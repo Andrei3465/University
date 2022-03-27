@@ -1,6 +1,7 @@
 package com.belhard.university;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Teacher extends Employee {
 	Teacher[] teachers;
@@ -48,6 +49,30 @@ public class Teacher extends Employee {
 
 	public void setAllowancesForAcademicDerges(double allowancesForAcademicDerges) {
 		this.allowancesForAcademicDerges = allowancesForAcademicDerges;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(teachers);
+		result = prime * result + Objects.hash(academicDegre, allowancesForAcademicDerges, id, subject);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Teacher other = (Teacher) obj;
+		return Objects.equals(academicDegre, other.academicDegre)
+				&& Double.doubleToLongBits(allowancesForAcademicDerges) == Double
+						.doubleToLongBits(other.allowancesForAcademicDerges)
+				&& id == other.id && Objects.equals(subject, other.subject) && Arrays.equals(teachers, other.teachers);
 	}
 
 	@Override

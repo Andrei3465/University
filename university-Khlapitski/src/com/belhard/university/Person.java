@@ -2,7 +2,7 @@ package com.belhard.university;
 
 import java.time.LocalDate;
 
-public abstract class Person {
+public abstract class Person implements Identifiable {
 
 	public abstract String introduceYourself();
 

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class App {
 
 	public static void main(String[] args) {
+		 
 		Student st1 = new Student("Andrei", "Bulkin");
 		st1.setEmail("student1@gmail.com");
 		st1.setAddress(new Address("Belarus", "Slutsk", "Chehova", "51", 65));

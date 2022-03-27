@@ -1,5 +1,7 @@
 package com.belhard.university;
 
+import java.util.Objects;
+
 public class Cleaner extends Employee {
 	Cleaner cleaner;
 	private static long counter = 1;
@@ -28,6 +30,23 @@ public class Cleaner extends Employee {
 
 	public void setCleaningCabinet(int cleaningCabinet) {
 		this.cleaningCabinet = cleaningCabinet;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cleaner, cleaningCabinet, id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cleaner other = (Cleaner) obj;
+		return Objects.equals(cleaner, other.cleaner) && cleaningCabinet == other.cleaningCabinet && id == other.id;
 	}
 
 	@Override

@@ -1,8 +1,9 @@
 package com.belhard.university;
 
 import java.util.Arrays;
+import java.util.Objects;
 
-public class Group {
+public class Group implements Identifiable {
 	private int number;
 	private final Teacher[] teachers = new Teacher[1];
 	private final Student[] students = new Student[8];
@@ -112,6 +113,30 @@ public class Group {
 
 	public void setNumber(int number) {
 		this.number = number;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(students);
+		result = prime * result + Arrays.hashCode(teachers);
+		result = prime * result + Objects.hash(number, numberOfStudents, numberOfTeachers);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Group other = (Group) obj;
+		return number == other.number && numberOfStudents == other.numberOfStudents
+				&& numberOfTeachers == other.numberOfTeachers && Arrays.equals(students, other.students)
+				&& Arrays.equals(teachers, other.teachers);
 	}
 
 	@Override

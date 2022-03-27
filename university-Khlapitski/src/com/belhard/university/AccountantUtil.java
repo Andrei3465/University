@@ -1,7 +1,5 @@
 package com.belhard.university;
 
-import java.util.Arrays;
-
 public class AccountantUtil extends Departament {
 
 	public static double vacationPay(Employee empl) {
@@ -26,17 +24,9 @@ public class AccountantUtil extends Departament {
 
 	@Override
 	public String toString() {
-		return "AccountantUtil [firstName=" + firstName + ", lastName=" + lastName + ", getNumber()=" + getNumber()
-				+ ", depList()=" + depList() + ", toString()=" + super.toString() + ", introduceYourself()="
-				+ introduceYourself() + ", getExperience()=" + getExperience() + ", getHoursWorked()="
-				+ getHoursWorked() + ", getSalary()=" + getSalary() + ", getVacation()=" + getVacation()
-				+ ", getStructuralDivivsion()=" + getStructuralDivivsion() + ", getYearsOfExperience()="
-				+ getYearsOfExperience() + ", getVacationPay()=" + getVacationPay() + ", getPrize()=" + getPrize()
-				+ ", getSalaryFix()=" + getSalaryFix() + ", getDegreeAllowance()=" + getDegreeAllowance()
-				+ ", getTechers()=" + Arrays.toString(getTechers()) + ", getId()=" + getId() + ", getFirstName()="
-				+ getFirstName() + ", getLastName()=" + getLastName() + ", getDateOfBirth()=" + getDateOfBirth()
-				+ ", getAddress()=" + getAddress() + ", getPhoneNumber()=" + getPhoneNumber() + ", getEmail()="
-				+ getEmail() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+		return "AccountantUtil [getNumber()=" + getNumber() + ", depList()=" + depList() + ", toString()="
+				+ super.toString() + ", introduceYourself()=" + introduceYourself() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + "]";
 	}
 
 }

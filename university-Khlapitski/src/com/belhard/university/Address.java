@@ -1,6 +1,8 @@
 package com.belhard.university;
 
-public class Address {
+import java.util.Objects;
+
+public class Address implements Identifiable {
 	private String country;
 	private String city;
 	private String street;
@@ -57,6 +59,24 @@ public class Address {
 
 	public void setFlat(int flat) {
 		this.flat = flat;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(city, country, flat, house, street);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		return Objects.equals(city, other.city) && Objects.equals(country, other.country) && flat == other.flat
+				&& Objects.equals(house, other.house) && Objects.equals(street, other.street);
 	}
 
 	@Override
