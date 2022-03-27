@@ -62,14 +62,14 @@ public class App {
 		Teacher th6 = new Teacher("James", "Bond");
 		Teacher th7 = new Teacher("Ivan", "Ivanov");
 		Teacher th8 = new Teacher("Julia", "Ivanova");
-		
+
 		Cleaner cl1 = new Cleaner("Svetlana", "Petrova");
 		cl1.setSalary(1500);
-		
+
 		Manager mg1 = new Manager("Galina", "Sidorova");
-		
+
 		Deputy dp1 = new Deputy("Oleg", "Sokolov");
-		
+
 		Departament departament = new Departament();
 		departament.addTeacher(th1);
 		departament.addTeacher(th2);
@@ -110,7 +110,7 @@ public class App {
 		group.addTeacher(new Teacher("Ozzy", "Osborn"));
 
 		System.out.println("ADDED NEW STUDENT:\n" + group.getList());
-System.out.println(departament.depList() + "\n" + "*****Total costs***** \n");
+		System.out.println(departament.depList() + "\n" + "*****Total costs***** \n");
 	}
 
 	@Override

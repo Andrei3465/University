@@ -68,14 +68,6 @@ public class Group {
 		}
 		return removed;
 	}
-	
-//	public double averageScore(Student academicPerformance) {
-//		double sum = 0;
-//		for(int i =0; i < students.length; i++) {
-//			sum += ;
-//			
-//		}
-//	}
 
 	public String getList() {
 		String list = "************Group " + number + "*************\n";
@@ -101,15 +93,15 @@ public class Group {
 					+ student.getAcademicPerformance() + " " + student.getAddress() + " , Date of birth: "
 					+ student.getDateOfBirth() + "\n";
 		}
-		
+
 		list += "*************Current average************\n";
 		double sum = 0;
-		for(int i =0; i < numberOfStudents; i++) {
+		for (int i = 0; i < numberOfStudents; i++) {
 			Student student = students[i];
-			sum = student.getAcademicPerformance();
-			double currentAverage = sum / numberOfStudents;
-			list +=" " + currentAverage + " ";
-			
+			sum += student.getAcademicPerformance();
+			double currentAverage = sum / students.length;
+			list += " " + currentAverage + " ";
+
 		}
 		return list;
 	}
