@@ -1,11 +1,12 @@
 package com.belhard.university;
 
 public class Manager extends Employee {
-	Manager manager;
+	Manager[] manager;
 
 	private static long counter = 1;
 	private long id;
-
+	private String subject;
+	
 	public Manager(String firstName, String lastName) {
 		id = counter++;
 		this.firstName = firstName;
@@ -26,5 +27,13 @@ public class Manager extends Employee {
 	public String introduceYourself() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 }

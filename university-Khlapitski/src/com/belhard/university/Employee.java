@@ -1,6 +1,8 @@
 package com.belhard.university;
 
 public abstract class Employee extends Person {
+	
+	private final Teacher[] techers = new Teacher[8];
 
 	private int experience;
 	private int hoursWorked;
@@ -94,6 +96,9 @@ public abstract class Employee extends Person {
 		this.degreeAllowance = degreeAllowance;
 	}
 
+	public Teacher[] getTechers() {
+		return techers;
+	}
 	@Override
 	public String toString() {
 		return "Employee [experience=" + experience + ", hoursWorked=" + hoursWorked + ", salary=" + salary
@@ -101,4 +106,5 @@ public abstract class Employee extends Person {
 				+ vacationPay + ", prize=" + prize + ", salaryFix=" + salaryFix + ", degreeAllowance=" + degreeAllowance
 				+ ", yearsOfExperience=" + yearsOfExperience + "]";
 	}
+
 }

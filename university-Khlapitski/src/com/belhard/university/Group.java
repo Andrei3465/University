@@ -68,14 +68,14 @@ public class Group {
 		}
 		return removed;
 	}
-
-	public int getNumber() {
-		return number;
-	}
-
-	public void setNumber(int number) {
-		this.number = number;
-	}
+	
+//	public double averageScore(Student academicPerformance) {
+//		double sum = 0;
+//		for(int i =0; i < students.length; i++) {
+//			sum += ;
+//			
+//		}
+//	}
 
 	public String getList() {
 		String list = "************Group " + number + "*************\n";
@@ -86,7 +86,7 @@ public class Group {
 				break;
 			}
 			list += (i + 1) + ". {id: " + teacher.getId() + "} " + teacher.getFirstName() + " " + teacher.getLastName()
-					+ " " + teacher.getEmail() + "\n";
+					+ " " + "\n";
 
 			list += "NOT APPOINTED\n";
 		}
@@ -97,10 +97,29 @@ public class Group {
 				break;
 			}
 			list += (i + 1) + ". {id:" + student.getId() + "} " + student.getFirstName() + " " + student.getLastName()
-					+ " , Email: " + student.getEmail() + " , Is Budget - " + student.getIsBudget() + " " + student.getAcademicPerformance() 
-					+ " " + student.getAddress() + " , Date of birth: " + student.getDateOfBirth() + "\n";
+					+ " , Email: " + student.getEmail() + " , Is Budget - " + student.getIsBudget() + " "
+					+ student.getAcademicPerformance() + " " + student.getAddress() + " , Date of birth: "
+					+ student.getDateOfBirth() + "\n";
+		}
+		
+		list += "*************Current average************\n";
+		double sum = 0;
+		for(int i =0; i < numberOfStudents; i++) {
+			Student student = students[i];
+			sum = student.getAcademicPerformance();
+			double currentAverage = sum / numberOfStudents;
+			list +=" " + currentAverage + " ";
+			
 		}
 		return list;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
 	}
 
 	@Override
