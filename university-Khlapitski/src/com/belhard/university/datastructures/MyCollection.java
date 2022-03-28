@@ -1,7 +1,7 @@
 package com.belhard.university.datastructures;
 
-public interface datastructuresInterface {
- int size();
+public interface MyCollection {
+
  boolean add(Object obj); 
  boolean remove(Object obj);
  boolean contains(Object obj); 
