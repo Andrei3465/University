@@ -1,17 +1,18 @@
 package com.belhard.university;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
 public class Group implements Identifiable {
 	private int number;
-	private final Teacher[] teachers = new Teacher[1];
-	private final Student[] students = new Student[8];
+	private final ArrayList<Teacher> teachers = new ArrayList<>();
+	private final ArrayList<Student> students = new ArrayList<>();
 	private int numberOfStudents;
 	private int numberOfTeachers;
 
 	public boolean addTeacher(Teacher teacher) {
-		if (numberOfTeachers < teachers.length) {
+		if (numberOfTeachers < teachers.size()) {
 			teachers[numberOfTeachers++] = teacher;
 			return true;
 		}
@@ -21,7 +22,7 @@ public class Group implements Identifiable {
 	public boolean removeTeacher(Teacher teacher) {
 		boolean removed = false;
 		for (int i = 0; i < numberOfTeachers; i++) {
-			Teacher elm = teachers[i];
+			Teacher elm = teachers.get(i);
 			if (elm.getId() == teacher.getId()) {
 				teachers[i] = null;
 				removed = true;
@@ -41,7 +42,7 @@ public class Group implements Identifiable {
 	}
 
 	public boolean addStudent(Student student) {
-		if (numberOfStudents < students.length) {
+		if (numberOfStudents < students.size()) {
 			students[numberOfStudents++] = student;
 			return true;
 		}
@@ -145,5 +146,11 @@ public class Group implements Identifiable {
 				+ Arrays.toString(students) + ", numberOfStudents=" + numberOfStudents + ", numberOfTeachers="
 				+ numberOfTeachers + ", getNumber()=" + getNumber() + ", getList()=" + getList() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

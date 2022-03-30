@@ -1,9 +1,11 @@
 package com.belhard.university;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
 public class Student extends Person {
+	
 	Student[] student;
 	private static long counter = 1;
 	private long id;
@@ -89,5 +91,11 @@ public class Student extends Person {
 				+ getAddress() + ", getPhoneNumber()=" + getPhoneNumber() + ", getEmail()=" + getEmail()
 				+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ "]";
+	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -1,14 +1,15 @@
 package com.belhard.university;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Departament implements Identifiable {
 
 	private int number;
-	private final Teacher[] teachers = new Teacher[8];
-	private final Manager[] managers = new Manager[1];
-	private final Deputy[] deputys = new Deputy[1];
-	private final Cleaner[] cleaners = new Cleaner[1];
+	private final ArrayList<Teacher> teachers = new ArrayList<>();
+	private final ArrayList<Manager> managers = new ArrayList<>();
+	private final ArrayList<Deputy> deputys = new ArrayList<>();
+	private final ArrayList<Cleaner> cleaners = new ArrayList<>();
 	private int numberOfTeachers;
 	private int numberOfManagers;
 	private int numberOfDeputys;
@@ -131,8 +132,8 @@ public class Departament implements Identifiable {
 	}
 
 	@Override
-	public String introduceYourself() {
+	public int idNum() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 }

@@ -60,5 +60,11 @@ public class Deputy extends Employee {
 				+ ", getDateOfBirth()=" + getDateOfBirth() + ", getAddress()=" + getAddress() + ", getPhoneNumber()="
 				+ getPhoneNumber() + ", getEmail()=" + getEmail() + ", getClass()=" + getClass() + "]";
 	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }

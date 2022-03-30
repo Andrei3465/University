@@ -60,4 +60,10 @@ public class Cleaner extends Employee {
 	public String introduceYourself() {
 		return "My name is " + cleaner + "I clean the cabinet" + cleaningCabinet + ".";
 	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

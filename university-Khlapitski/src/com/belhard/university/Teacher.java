@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Teacher extends Employee {
+	
 	Teacher[] teachers;
 	private static long counter = 1;
 	private long id;
@@ -85,5 +86,11 @@ public class Teacher extends Employee {
 	@Override
 	public String introduceYourself() {
 		return "My name is " + teachers + ", I'am a " + subject + "teacher.";
+	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

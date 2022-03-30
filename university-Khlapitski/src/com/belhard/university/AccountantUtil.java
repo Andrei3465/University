@@ -25,7 +25,7 @@ public class AccountantUtil extends Departament {
 	@Override
 	public String toString() {
 		return "AccountantUtil [getNumber()=" + getNumber() + ", depList()=" + depList() + ", toString()="
-				+ super.toString() + ", introduceYourself()=" + introduceYourself() + ", getClass()=" + getClass()
+				+ super.toString() + ", introduceYourself()=" + ", getClass()=" + getClass()
 				+ ", hashCode()=" + hashCode() + "]";
 	}
 

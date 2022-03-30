@@ -84,4 +84,10 @@ public class Address implements Identifiable {
 		return "Address [country=" + country + ", city=" + city + ", street=" + street + ", house=" + house + ", flat="
 				+ flat + "]";
 	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

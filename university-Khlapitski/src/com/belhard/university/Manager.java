@@ -76,5 +76,11 @@ public class Manager extends Employee {
 				+ ", getAddress()=" + getAddress() + ", getPhoneNumber()=" + getPhoneNumber() + ", getEmail()="
 				+ getEmail() + ", getClass()=" + getClass() + "]";
 	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }
