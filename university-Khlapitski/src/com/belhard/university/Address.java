@@ -1,6 +1,8 @@
 package com.belhard.university;
 
-public class Address {
+import java.util.Objects;
+
+public class Address implements Identifiable {
 	private String country;
 	private String city;
 	private String street;
@@ -14,8 +16,8 @@ public class Address {
 		this.house = house;
 	}
 
-	public Address (String country, String city, String street, String house, int flat) {
-		this(country, city,street, house);
+	public Address(String country, String city, String street, String house, int flat) {
+		this(country, city, street, house);
 		this.flat = flat;
 	}
 
@@ -60,11 +62,32 @@ public class Address {
 	}
 
 	@Override
-	public String toString() {
-		return "Address [country=" + country + ", city=" + city + ", street=" + street + ", house=" + house + ", flat="
-				+ flat + ", getCountry()=" + getCountry() + ", getCity()=" + getCity() + ", getStreet()=" + getStreet()
-				+ ", getHouse()=" + getHouse() + ", getFlat()=" + getFlat() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	public int hashCode() {
+		return Objects.hash(city, country, flat, house, street);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		return Objects.equals(city, other.city) && Objects.equals(country, other.country) && flat == other.flat
+				&& Objects.equals(house, other.house) && Objects.equals(street, other.street);
+	}
+
+	@Override
+	public String toString() {
+		return "Address [country=" + country + ", city=" + city + ", street=" + street + ", house=" + house + ", flat="
+				+ flat + "]";
+	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

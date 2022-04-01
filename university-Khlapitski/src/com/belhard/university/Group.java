@@ -1,41 +1,58 @@
 package com.belhard.university;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
-public class Group {
+public class Group implements Identifiable {
 	private int number;
-	private Teacher teacher;
-	private final Student[] students = new Student[8];
+	private final ArrayList<Teacher> teachers = new ArrayList<>();
+	private final ArrayList<Student> students = new ArrayList<>();
 	private int numberOfStudents;
+	private int numberOfTeachers;
 
-	public int getNumber() {
-		return number;
+	public boolean addTeacher(Teacher teacher) {
+		if (numberOfTeachers < teachers.size()) {
+			teachers[numberOfTeachers++] = teacher;
+			return true;
+		}
+		return false;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
-
-	public Teacher getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public boolean removeTeacher(Teacher teacher) {
+		boolean removed = false;
+		for (int i = 0; i < numberOfTeachers; i++) {
+			Teacher elm = teachers.get(i);
+			if (elm.getId() == teacher.getId()) {
+				teachers[i] = null;
+				removed = true;
+			}
+			if (removed) {
+				if (i != numberOfTeachers - 1) {
+					teachers[i] = teachers[i + 1];
+				} else {
+					teachers[i] = null;
+				}
+			}
+		}
+		if (removed) {
+			numberOfTeachers--;
+		}
+		return removed;
 	}
 
 	public boolean addStudent(Student student) {
-		if (numberOfStudents < students.length) {
+		if (numberOfStudents < students.size()) {
 			students[numberOfStudents++] = student;
 			return true;
 		}
 		return false;
 	}
-class Student extends Person{
+
 	public boolean removeStudent(Student student) {
 		boolean removed = false;
 		for (int i = 0; i < numberOfStudents; i++) {
-			Person elm = students[i];
+			Student elm = students[i];
 			if (elm.getId() == student.getId()) {
 				students[i] = null;
 				removed = true;
@@ -47,41 +64,93 @@ class Student extends Person{
 					students[i] = null;
 				}
 			}
-
 		}
 		if (removed) {
 			numberOfStudents--;
 		}
 		return removed;
 	}
-}
-class Teacher extends Person{
+
 	public String getList() {
-		String list = "#####Group " + number + "#####\n";
+		String list = "************Group " + number + "*************\n";
 		list += "Teacher: ";
-		if (teacher != null) {
-			list += "{id: " + teacher.getId() + "} " + teacher.getFirstName() + " " + teacher.getLastName() + " "
-					+ teacher.getEmail() + "\n";
-		} else {
+		for (int i = 0; i < teachers.length; i++) {
+			Teacher teacher = teachers[i];
+			if (teacher == null) {
+				break;
+			}
+			list += (i + 1) + ". {id: " + teacher.getId() + "} " + teacher.getFirstName() + " " + teacher.getLastName()
+					+ " " + "\n";
+
 			list += "NOT APPOINTED\n";
 		}
 		list += "Students:\n";
 		for (int i = 0; i < students.length; i++) {
-			Person student = students[i];
+			Student student = students[i];
 			if (student == null) {
 				break;
 			}
 			list += (i + 1) + ". {id:" + student.getId() + "} " + student.getFirstName() + " " + student.getLastName()
-					+ " " + student.getEmail() + "\n";
+					+ " , Email: " + student.getEmail() + " , Is Budget - " + student.getIsBudget() + " "
+					+ student.getAcademicPerformance() + " " + student.getAddress() + " , Date of birth: "
+					+ student.getDateOfBirth() + "\n";
+		}
+
+		list += "*************Current average************\n";
+		double sum = 0;
+		for (int i = 0; i < numberOfStudents; i++) {
+			Student student = students[i];
+			sum += student.getAcademicPerformance();
+			double currentAverage = sum / students.length;
+			list += " " + currentAverage + " ";
+
 		}
 		return list;
 	}
-}
-@Override
-public String toString() {
-	return "Group [number=" + number + ", teacher=" + teacher + ", students=" + Arrays.toString(students)
-			+ ", numberOfStudents=" + numberOfStudents + ", getNumber()=" + getNumber() + ", getTeacher()="
-			+ getTeacher() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-			+ super.toString() + "]";
-}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(students);
+		result = prime * result + Arrays.hashCode(teachers);
+		result = prime * result + Objects.hash(number, numberOfStudents, numberOfTeachers);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Group other = (Group) obj;
+		return number == other.number && numberOfStudents == other.numberOfStudents
+				&& numberOfTeachers == other.numberOfTeachers && Arrays.equals(students, other.students)
+				&& Arrays.equals(teachers, other.teachers);
+	}
+
+	@Override
+	public String toString() {
+		return "Group [number=" + number + ", teachers=" + Arrays.toString(teachers) + ", students="
+				+ Arrays.toString(students) + ", numberOfStudents=" + numberOfStudents + ", numberOfTeachers="
+				+ numberOfTeachers + ", getNumber()=" + getNumber() + ", getList()=" + getList() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public int idNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

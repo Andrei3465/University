@@ -2,31 +2,18 @@ package com.belhard.university;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person implements Identifiable {
+
+	public abstract String introduceYourself();
+
 	private static long counter = 1;
 	private long id;
 	public String firstName;
 	public String lastName;
 	private LocalDate dateOfBirth;
 	private Address address;
-	private int phoneNumber;
+	private long phoneNumber;
 	private String email;
-
-	class Student extends Person {
-		public Student(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
-
-	class Teacher extends Person {
-		public Teacher(String firstName, String lastName) {
-			id = counter++;
-			this.firstName = firstName;
-			this.lastName = lastName;
-		}
-	}
 
 	public static long getCounter() {
 		return counter;
@@ -76,11 +63,11 @@ public class Person {
 		this.address = address;
 	}
 
-	public int getPhoneNumber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -96,9 +83,9 @@ public class Person {
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth="
 				+ dateOfBirth + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email=" + email
-				+ ", getId()=" + getId() + ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName()
-				+ ", getDateOfBirth()=" + getDateOfBirth() + ", getAddress()=" + getAddress() + ", getPhoneNumber()="
-				+ getPhoneNumber() + ", getEmail()=" + getEmail() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", introduceYourself()=" + introduceYourself() + ", getId()=" + getId() + ", getFirstName()="
+				+ getFirstName() + ", getLastName()=" + getLastName() + ", getDateOfBirth()=" + getDateOfBirth()
+				+ ", getAddress()=" + getAddress() + ", getPhoneNumber()=" + getPhoneNumber() + ", getEmail()="
+				+ getEmail() + "]";
 	}
 }
